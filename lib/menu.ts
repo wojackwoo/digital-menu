@@ -87,7 +87,7 @@ const sides: MenuItem[] = menuSource.sides_suggestions_accompagnement.map((side)
       label: 'Style',
       required: true,
       options: [
-        makeOption('Regular', parseDH(side.price), 'style'),
+        makeOption('Regular', basePrice ?? 0, 'style'),
         makeOption('Pepperoni', parseDH(pepperoniOption), 'style')
       ]
     });

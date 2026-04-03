@@ -4,8 +4,69 @@
 
 :root {
   color-scheme: light;
+  --brand:        #e11d48;
+  --brand-dark:   #be123c;
+  --accent:       #f59e0b;
+  --surface:      #ffffff;
+  --surface-muted:#f8fafc;
+  --text:         #0f172a;
+  --text-muted:   #64748b;
+  --border:       #e2e8f0;
+  --radius-card:  1rem;
+  --shadow-soft:  0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
 }
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  @apply bg-surface-muted text-slate-900;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar           { width: 4px; height: 4px; }
+::-webkit-scrollbar-track     { background: transparent; }
+::-webkit-scrollbar-thumb     { background: #cbd5e1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Glass-morphism utility ── */
+.glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* ── Category pill active glow ── */
+.pill-active {
+  box-shadow: 0 0 0 3px rgba(225,29,72,0.20);
+}
+
+/* ── Staggered list item delay helpers ── */
+.stagger-1  { animation-delay: 0.05s; }
+.stagger-2  { animation-delay: 0.10s; }
+.stagger-3  { animation-delay: 0.15s; }
+.stagger-4  { animation-delay: 0.20s; }
+.stagger-5  { animation-delay: 0.25s; }
+.stagger-6  { animation-delay: 0.30s; }
+.stagger-7  { animation-delay: 0.35s; }
+.stagger-8  { animation-delay: 0.40s; }
+
+/* ── Quantity button ── */
+.qty-btn {
+  @apply flex h-9 w-9 items-center justify-center rounded-full border-2 border-slate-200 text-slate-700 font-bold transition-all duration-150 hover:border-brand hover:bg-brand hover:text-white active:scale-90;
+}
+
+/* ── Smooth focus ring ── */
+.focus-ring {
+  @apply outline-none ring-2 ring-brand/40 ring-offset-1;
+}
+
+/* ── WhatsApp gradient button ── */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+/* ── Brand gradient button ── */
+.btn-brand {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 60%, #be123c 100%);
 }
